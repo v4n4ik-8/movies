@@ -38,16 +38,14 @@ function renderMovies() {
     let moviesToShow = [];
     
     if (currentUser === 'both') {
-        // объединяем два списка в один уникальный массив
         moviesToShow = [...data.vanya.movies, ...data.yana.movies];
-        // убираем дубликаты на случай, если вы посоветовали друг другу одно и то же
         moviesToShow = [...new Set(moviesToShow)];
     } else {
         moviesToShow = data[currentUser].movies;
     }
 
-    // прогресс сохраняется отдельно для каждого экрана (ваня, яна, общий)
-    const savedProgress = JSON.parse(localStorage.getItem(`movies_${currentUser}`)) || {};
+    // Теперь всегда используем один и тот же ключ в localStorage для синхронизации
+    const savedProgress = JSON.parse(localStorage.getItem('all_movies_progress')) || {};
 
     moviesToShow.forEach(movie => {
         const isChecked = savedProgress[movie] ? 'checked' : '';
@@ -65,9 +63,14 @@ function renderMovies() {
 }
 
 function toggleMovie(movieName) {
-    let savedProgress = JSON.parse(localStorage.getItem(`movies_${currentUser}`)) || {};
+    // Получаем общее хранилище
+    let savedProgress = JSON.parse(localStorage.getItem('all_movies_progress')) || {};
+    
+    // Меняем статус фильма
     savedProgress[movieName] = !savedProgress[movieName];
-    localStorage.setItem(`movies_${currentUser}`, JSON.stringify(savedProgress));
+    
+    // Сохраняем в единое хранилище
+    localStorage.setItem('all_movies_progress', JSON.stringify(savedProgress));
 }
 
 function goBack() {
