@@ -1,0 +1,81 @@
+body {
+    background-color: #c0c0c0; /* Тот самый серый цвет Windows 95 */
+    font-family: "Times New Roman", Times, serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    margin: 0;
+}
+
+.container {
+    background-color: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 1px 1px 0 black;
+}
+
+h1, h2 {
+    background-color: #000080; /* Темно-синий заголовок окна */
+    color: white;
+    font-size: 16px;
+    margin: -20px -20px 20px -20px;
+    padding: 5px 10px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Кнопки в стиле старой Windows */
+button {
+    background: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    padding: 5px 20px;
+    cursor: pointer;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    outline: 1px solid black;
+}
+
+button:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+#movie-list {
+    background: white;
+    border: 2px inset #808080; /* Вдавленное поле списка */
+    padding: 10px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.movie-item {
+    padding: 3px 0;
+    font-size: 18px;
+}
+
+.movie-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.back-btn {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+/* Добавим эффект старой бегущей строки или мигания (по желанию) */
+.hidden { display: none; }

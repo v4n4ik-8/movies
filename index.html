@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>фильмы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="setup-screen">
+            <h1>фильмы</h1>
+            <div class="button-group">
+                <button onclick="initApp('vanya')">ваня</button>
+                <button onclick="initApp('yana')">яна</button>
+            </div>
+            <div style="margin-top: 15px; text-align: center;">
+                <button onclick="initApp('both')">общий список</button>
+            </div>
+        </div>
+
+        <div id="movie-screen" class="hidden">
+            <h2 id="welcome-text"></h2>
+            <div id="movie-list"></div>
+            <button class="back-btn" onclick="goBack()">сменить пользователя</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
